@@ -11,13 +11,13 @@ class BinaryTree
 		
 	protected:
 		auto placeNode(std::shared_ptr<BinaryNode<T>> subTree,
-						std::shared_ptr<BinaryNode<T>> newNode)
+						std::shared_ptr<BinaryNode<T>> newNode);
 						
 		auto removeValue(std::shared_ptr<BinaryNode<T>> subTreePtr,
 						const T target,
-						bool &isSuccessful){
+						bool &isSuccessful);
 		
-		auto removeNode(std::shared_ptr<BinaryNode<T>> toRemove){
+		auto removeNode(std::shared_ptr<BinaryNode<T>> toRemove);
 		
 		auto removeLeftmostNode(std::shared_ptr<BinaryNode<T>> subTree,
 								T &inorderSuccessor);
@@ -26,20 +26,20 @@ class BinaryTree
 						const T &target);
 	
 	public:
-		binarySearchTree();
+		BinarySearchTree();
 		BinarySearchTree(const T &rootItem);
-		BinarySearchTree(const BinarySearchTree<T &tree);
+		//BinarySearchTree(const BinarySearchTree<T> &tree);
 		
 		
 		bool isEmpty() const;
 		int getHeight() const;
 		int getNumberOfNodes() const;
-		T getRootData() const throw(PrecondViolatedExcept);
+		T getRootData() const; //throw(PrecondViolatedExcept);
 		void setRootData(const T &newData);
 		bool add(const T &newEntry);
-		bool remove(const ItemType &target);
+		bool remove(const T &target);
 		void clear();
-		T getEntry(const T &anEntry) const throw (NotFoundException);
+		T getEntry(const T &anEntry) const;// throw (NotFoundException);
 		bool contains(const T &anEntry) const;
 		
 		

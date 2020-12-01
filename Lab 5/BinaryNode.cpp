@@ -1,33 +1,33 @@
 #include "BinaryNode.h"
 template<class T>
-BinaryNode::BinaryNode(){	};
+BinaryNode<T>::BinaryNode(){	};
 
 template<class T>
-BinaryNode::BinaryNode(const T& newItem){	};
+BinaryNode<T>::BinaryNode(const T& newItem){	};
 
 template<class T>
-BinaryNode::BinaryNode(const T& newItem,
+BinaryNode<T>::BinaryNode(const T& newItem,
 						std::shared_ptr<BinaryNode<T>> leftChild,
 						std::shared_ptr<BinaryNode<T>> rightChild){	};
 
 template<class T>
-void BinaryNode::setItem(const T& anItem){	};
+void BinaryNode<T>::setItem(const T& anItem){	};
 
 template<class T>
-T BinaryNode::getItem() const{	};
+T BinaryNode<T>::getItem() const{	};
 
 template<class T>
-bool BinaryNode::isLeaf() const{	};
+bool BinaryNode<T>::isLeaf() const{	};
 
 template<class T>
-auto BinaryNode::getLeftChild() const{	};
+auto BinaryNode<T>::getLeftChild() const{	};
 
 template<class T>
-auto BinaryNode::getRightChild() const{	};
+auto BinaryNode<T>::getRightChild() const{	};
 
 template<class T>
-void BinaryNode::setLeftChild(std::shared_ptr<BinaryNode<T>> newLeft){	};
+void BinaryNode<T>::setLeftChild(std::shared_ptr<BinaryNode<T>> newLeft){	};
 
 template<class T>
-void BinaryNode::setRightChild(std::shared_ptr<BinaryNode<T>> newRight){	};
+void BinaryNode<T>::setRightChild(std::shared_ptr<BinaryNode<T>> newRight){	};
 

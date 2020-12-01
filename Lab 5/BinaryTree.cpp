@@ -22,14 +22,15 @@ auto BinaryTree<T>::findNode(std::shared_ptr<BinaryNode<T>> subTree,
 	
 
 template<class T>
-BinaryTree<T>::binarySearchTree(){	};
+BinaryTree<T>::BinarySearchTree(){	};
 
 template<class T>
 BinaryTree<T>::BinarySearchTree(const T &rootItem){	};
 
+/*
 template<class T>
-BinaryTree<T>::BinarySearchTree(const BinarySearchTree<T &tree){	};
-
+BinaryTree<T>::BinarySearchTree(const BinarySearchTree<T> &tree){	};
+*/
 
 
 template<class T>
@@ -42,7 +43,7 @@ template<class T>
 int BinaryTree<T>::getNumberOfNodes() const{	};
 
 template<class T>
-T BinaryTree<T>::getRootData() const throw(PrecondViolatedExcept){	};
+T BinaryTree<T>::getRootData() const /*throw(PrecondViolatedExcept)*/{	};
 
 template<class T>
 void BinaryTree<T>::setRootData(const T &newData){	};
@@ -51,13 +52,13 @@ template<class T>
 bool BinaryTree<T>::add(const T &newEntry){	};
 
 template<class T>
-bool BinaryTree<T>::remove(const ItemType &target){	};
+bool BinaryTree<T>::remove(const T &target){	};
 
 template<class T>
 void BinaryTree<T>::clear(){	};
 
 template<class T>
-T BinaryTree<T>::getEntry(const T &anEntry) const throw (NotFoundException){	};
+T BinaryTree<T>::getEntry(const T &anEntry) const /*throw (NotFoundException)*/{	};
 
 template<class T>
 bool BinaryTree<T>::contains(const T &anEntry) const{	};

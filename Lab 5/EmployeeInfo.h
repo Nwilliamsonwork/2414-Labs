@@ -7,7 +7,7 @@ class EmployeeInfo
 {
 	private:
 		int id;
-		std::string name
+		std::string name;
 		
 	public:
 		EmployeeInfo();
