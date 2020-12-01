@@ -3,6 +3,12 @@
 EmployeeInfo::EmployeeInfo()
 {
 };
+
+EmployeeInfo::EmployeeInfo(int a, std::string b)
+{
+	id = a;
+	name = b;	
+};
 		
 int EmployeeInfo::getID() const
 {
