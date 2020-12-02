@@ -12,6 +12,7 @@ class EmployeeInfo
 	public:
 		EmployeeInfo();
 		EmployeeInfo(int, std::string);
+		//EmployeeInfo(
 		
 		int getID() const;
 		std::string getName() const;

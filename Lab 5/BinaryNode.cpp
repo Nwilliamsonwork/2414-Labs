@@ -1,9 +1,15 @@
 #include "BinaryNode.h"
+#include "EmployeeInfo.h"
+
 template<class T>
 BinaryNode<T>::BinaryNode(){	};
 
 template<class T>
-BinaryNode<T>::BinaryNode(const T& newItem){	};
+BinaryNode<T>::BinaryNode(const T& newItem){
+	item = newItem;
+	leftChild = nullptr;
+	rightChild = nullptr;
+};
 
 template<class T>
 BinaryNode<T>::BinaryNode(const T& newItem,
@@ -31,3 +37,5 @@ void BinaryNode<T>::setLeftChild(std::shared_ptr<BinaryNode<T>> newLeft){	};
 template<class T>
 void BinaryNode<T>::setRightChild(std::shared_ptr<BinaryNode<T>> newRight){	};
 
+
+template class BinaryNode<EmployeeInfo>;

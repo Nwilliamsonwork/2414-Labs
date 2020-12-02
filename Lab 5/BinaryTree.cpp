@@ -1,4 +1,5 @@
 #include "BinaryTree.h"
+#include "EmployeeInfo.h"
 
 template<class T>
 auto BinaryTree<T>::placeNode(std::shared_ptr<BinaryNode<T>> subTree,
@@ -22,7 +23,11 @@ auto BinaryTree<T>::findNode(std::shared_ptr<BinaryNode<T>> subTree,
 	
 
 template<class T>
-BinaryTree<T>::BinaryTree(){	};
+BinaryTree<T>::BinaryTree(){
+	rootPtr = nullptr;
+	nodeCount = 0;
+	height = 0;
+};
 
 template<class T>
 BinaryTree<T>::BinaryTree(const T &rootItem){	};
@@ -34,7 +39,9 @@ BinaryTree<T>::BinarySearchTree(const BinarySearchTree<T> &tree){	};
 
 
 template<class T>
-bool BinaryTree<T>::isEmpty() const{	};
+bool BinaryTree<T>::isEmpty() const{
+	return nodeCount == 0;
+};
 
 template<class T>
 int BinaryTree<T>::getHeight() const{	};
@@ -46,10 +53,13 @@ template<class T>
 T BinaryTree<T>::getRootData() const /*throw(PrecondViolatedExcept)*/{	};
 
 template<class T>
-void BinaryTree<T>::setRootData(const T &newData){	};
+void BinaryTree<T>::setRootData(const T &newEntry){	};
 
 template<class T>
-bool BinaryTree<T>::add(const T &newEntry){	};
+bool BinaryTree<T>::add(const T &newEntry){
+	auto newNodePtr = std::make_shared<BinaryNode<T>>(newEntry);
+	return true;
+};
 
 template<class T>
 bool BinaryTree<T>::remove(const T &target){	};
@@ -62,4 +72,6 @@ T BinaryTree<T>::getEntry(const T &anEntry) const /*throw (NotFoundException)*/{
 
 template<class T>
 bool BinaryTree<T>::contains(const T &anEntry) const{	};
+
+template class BinaryTree<EmployeeInfo>;
 

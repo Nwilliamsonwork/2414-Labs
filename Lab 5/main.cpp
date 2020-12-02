@@ -16,11 +16,20 @@ int main()
 	
 	ifstream infile;
 	shared_ptr<EmployeeInfo> employee;
+	/*
+	shared_ptr<BinaryTree<EmployeeInfo>> sortedTree;
+	sortedTree = make_shared<BinaryTree<EmployeeInfo>>();
+	*/
+	BinaryTree<EmployeeInfo> sortedTree;
+	
 	char input[256];
 	
 	infile.open("Employees.txt");
-	
-	
+	/*
+	infile.getLine(input, 256);
+	int secondInt = atoi(input);
+	infile.getLine(input, 
+	*/
 	while(infile.good())
 	{
 		infile.getline(input, 256);
@@ -30,6 +39,7 @@ int main()
 		//cout << tempInt << "	" << tempStr << endl;
 		employee = make_shared<EmployeeInfo>(tempInt, tempStr);
 		cout << employee->getID() << "	" << employee->getName();
+		sortedTree.add(*employee);
 	}
 	
 	infile.close();
