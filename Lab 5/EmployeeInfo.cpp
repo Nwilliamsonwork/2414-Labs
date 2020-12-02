@@ -2,23 +2,29 @@
 
 EmployeeInfo::EmployeeInfo()
 {
+	id = 0;
+	name = "";
 };
 
-EmployeeInfo::EmployeeInfo(int a, std::string b)
+EmployeeInfo::EmployeeInfo(int n, std::string s)
 {
-	id = a;
-	name = b;	
+	id = n;
+	name = s;
 };
 		
 int EmployeeInfo::getID() const
 {
+	return id;
 };
 std::string EmployeeInfo::getName() const
 {
+	return name;
 };
-bool EmployeeInfo::setID(int)
+bool EmployeeInfo::setID(int n)
 {
+	id = n;
 };
-bool EmployeeInfo::setName(std::string)
+bool EmployeeInfo::setName(std::string s)
 {
+	name = s;
 };

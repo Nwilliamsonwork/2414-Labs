@@ -16,17 +16,22 @@ int main()
 	
 	ifstream infile;
 	shared_ptr<EmployeeInfo> employee;
-	int tempInt;
-	string tempStr;
+	char input[256];
 	
 	infile.open("Employees.txt");
 	
-	while(infile >> tempInt)
+	
+	while(infile.good())
 	{
-		infile >> tempStr;
-		cout << tempInt << "/t" << tempStr << endl;
-		//employee = make_shared<EmployeeInfo>(tempInt, tempStr);
+		infile.getline(input, 256);
+		int tempInt = atoi(input);
+		infile.getline(input, 256);
+		string tempStr(input);
+		//cout << tempInt << "	" << tempStr << endl;
+		employee = make_shared<EmployeeInfo>(tempInt, tempStr);
+		cout << employee->getID() << "	" << employee->getName();
 	}
+	
 	infile.close();
 	
 	//TODO: ask user for an id # and say whether or not it was found in the tree
