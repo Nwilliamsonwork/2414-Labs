@@ -22,10 +22,10 @@ auto BinaryTree<T>::findNode(std::shared_ptr<BinaryNode<T>> subTree,
 	
 
 template<class T>
-BinaryTree<T>::BinarySearchTree(){	};
+BinaryTree<T>::BinaryTree(){	};
 
 template<class T>
-BinaryTree<T>::BinarySearchTree(const T &rootItem){	};
+BinaryTree<T>::BinaryTree(const T &rootItem){	};
 
 /*
 template<class T>

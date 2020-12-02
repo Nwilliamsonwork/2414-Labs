@@ -26,8 +26,8 @@ class BinaryTree
 						const T &target);
 	
 	public:
-		BinarySearchTree();
-		BinarySearchTree(const T &rootItem);
+		BinaryTree();
+		BinaryTree(const T &rootItem);
 		//BinarySearchTree(const BinarySearchTree<T> &tree);
 		
 		
