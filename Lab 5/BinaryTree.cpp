@@ -58,6 +58,7 @@ void BinaryTree<T>::setRootData(const T &newEntry){	};
 template<class T>
 bool BinaryTree<T>::add(const T &newEntry){
 	auto newNodePtr = std::make_shared<BinaryNode<T>>(newEntry);
+	
 	return true;
 };
 

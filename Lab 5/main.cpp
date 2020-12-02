@@ -8,6 +8,7 @@
 #include <iostream>
 
 using namespace std;
+//extern template class BinaryTree<EmployeeInfo>;
 
 int main()
 {
