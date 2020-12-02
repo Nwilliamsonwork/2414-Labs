@@ -5,6 +5,7 @@
 #include <string>
 #include <fstream>
 #include <memory>
+#include <iostream>
 
 using namespace std;
 
@@ -20,12 +21,13 @@ int main()
 	
 	infile.open("Employees.txt");
 	
-	while(!infile.eof())
+	while(infile >> tempInt)
 	{
-		infile >> tempInt;
 		infile >> tempStr;
-		employee = make_shared<EmployeeInfo>(tempInt, tempStr);
+		cout << tempInt << "/t" << tempStr << endl;
+		//employee = make_shared<EmployeeInfo>(tempInt, tempStr);
 	}
+	infile.close();
 	
 	//TODO: ask user for an id # and say whether or not it was found in the tree
 	
