@@ -1,9 +1,26 @@
 #include "BinaryTree.h"
 #include "EmployeeInfo.h"
 
+#include <memory>
+
+//incomplete
 template<class T>
 auto BinaryTree<T>::placeNode(std::shared_ptr<BinaryNode<T>> subTree,
-								std::shared_ptr<BinaryNode<T>> newNode){	};
+								std::shared_ptr<BinaryNode<T>> newNode){	
+	if(subTree = nullptr)
+		return newNode;
+	else if (subTree->getItem() > newNode->getItem())
+	{
+		std::shared_ptr<BinaryNode<T>> tempPtr = placeNode(subTree->getLeftChild(), newNode);
+		subTree->setLeftChild(tempPtr);
+	}
+	else
+	{
+		auto tempPtr = placeNode(subTree->getRightChild(), newNode);
+		subTree->setRightChild(tempPtr);
+	}
+	return subTree;
+};
 
 template<class T>				
 auto BinaryTree<T>::removeValue(std::shared_ptr<BinaryNode<T>> subTreePtr,

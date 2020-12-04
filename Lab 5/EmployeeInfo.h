@@ -18,6 +18,12 @@ class EmployeeInfo
 		std::string getName() const;
 		bool setID(int);
 		bool setName(std::string);
+		
+		//Operators: > 
+		
+		bool operator>(const EmployeeInfo&);
+		bool operator<(const EmployeeInfo&);
+		bool operator==(const EmployeeInfo&);
 };
 
 #endif

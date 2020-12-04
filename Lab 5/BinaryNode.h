@@ -24,8 +24,8 @@ class BinaryNode
 		
 		bool isLeaf() const;
 		
-		auto getLeftChild() const;
-		auto getRightChild() const;
+		std::shared_ptr<BinaryNode<T>> getLeftChild() const;
+		std::shared_ptr<BinaryNode<T>> getRightChild() const;
 		
 		void setLeftChild(std::shared_ptr<BinaryNode<T>> newLeft);
 		void setRightChild(std::shared_ptr<BinaryNode<T>> newRight);

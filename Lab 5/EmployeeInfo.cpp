@@ -28,3 +28,21 @@ bool EmployeeInfo::setName(std::string s)
 {
 	name = s;
 };
+
+
+bool EmployeeInfo::operator> (/*const EmployeeInfo& leftSide,*/ const EmployeeInfo& rightSide)
+{
+	return id > rightSide.getID();
+};
+
+
+
+bool EmployeeInfo::operator< (const EmployeeInfo& rightSide)
+{
+	return id < rightSide.getID();
+};
+
+bool EmployeeInfo::operator== (const EmployeeInfo& rightSide)
+{
+	return id == rightSide.getID();
+};

@@ -26,10 +26,14 @@ template<class T>
 bool BinaryNode<T>::isLeaf() const{	};
 
 template<class T>
-auto BinaryNode<T>::getLeftChild() const{	};
+std::shared_ptr<BinaryNode<T>> BinaryNode<T>::getLeftChild() const{	
+	return leftChild;
+};
 
 template<class T>
-auto BinaryNode<T>::getRightChild() const{	};
+std::shared_ptr<BinaryNode<T>> BinaryNode<T>::getRightChild() const{	
+	return rightChild;
+};
 
 template<class T>
 void BinaryNode<T>::setLeftChild(std::shared_ptr<BinaryNode<T>> newLeft){	};
