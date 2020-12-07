@@ -38,6 +38,14 @@ int main()
 	
 	infile.close();
 	
+	int testID;
+	cout << "Enter an ID# to search for: ";
+	cin >> testID;
+	
+	employee = make_shared<EmployeeInfo>(testID, "");
+	bool found = sortedTree.contains(*employee);
+	
+	cout << found;
 	//TODO: ask user for an id # and say whether or not it was found in the tree
 	
 	//TODO EC: Display the tree to the user

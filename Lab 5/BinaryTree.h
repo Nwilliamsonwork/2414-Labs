@@ -26,10 +26,12 @@ class BinaryTree
 		
 		auto findNode(std::shared_ptr<BinaryNode<T>> subTree,
 						const T &target);
+		
+		bool search(std::shared_ptr<BinaryNode<T>> subTree,
+						T &target);
 	
-	
-		auto balancedAdd(std::shared_ptr<BinaryNode<T>> subTree,
-							std::shared_ptr<BinaryNode<T>> NewNodePtr);
+		//auto balancedAdd(std::shared_ptr<BinaryNode<T>> subTree,
+		//					std::shared_ptr<BinaryNode<T>> NewNodePtr);
 							
 		auto getHeightHelper(std::shared_ptr<BinaryNode<T>> subTreePtr);
 		
@@ -52,7 +54,7 @@ class BinaryTree
 		Outputs: An integer value representing the height of the tree
 		Purpose: Allows client code to see the height of the tree
 		*/
-		int getHeight() const;
+		int getHeight() ;
 		
 		/*
 		Function: getNumberOfNodes
@@ -118,7 +120,7 @@ class BinaryTree
 		Outputs: A boolean value. True if the tree contains a data item that matches the target, False if not.
 		Purpose: Allows client code to test whether the specified data item occurs at least once in the tree.
 		*/
-		bool contains(const T &target) const;
+		bool contains( T &target);
 		
 		
 		

@@ -17,10 +17,14 @@ BinaryNode<T>::BinaryNode(const T& newItem,
 						std::shared_ptr<BinaryNode<T>> rightChild){	};
 
 template<class T>
-void BinaryNode<T>::setItem(const T& anItem){	};
+void BinaryNode<T>::setItem(const T& anItem){
+	item = anItem;
+};
 
 template<class T>
-T BinaryNode<T>::getItem() const{	};
+T BinaryNode<T>::getItem() const{
+	return item;
+};
 
 template<class T>
 bool BinaryNode<T>::isLeaf() const{	};
@@ -36,10 +40,14 @@ std::shared_ptr<BinaryNode<T>> BinaryNode<T>::getRightChild() const{
 };
 
 template<class T>
-void BinaryNode<T>::setLeftChild(std::shared_ptr<BinaryNode<T>> newLeft){	};
+void BinaryNode<T>::setLeftChild(std::shared_ptr<BinaryNode<T>> newLeft){
+	leftChild = newLeft;
+};
 
 template<class T>
-void BinaryNode<T>::setRightChild(std::shared_ptr<BinaryNode<T>> newRight){	};
+void BinaryNode<T>::setRightChild(std::shared_ptr<BinaryNode<T>> newRight){
+	rightChild = newRight;
+};
 
 
 template class BinaryNode<EmployeeInfo>;
