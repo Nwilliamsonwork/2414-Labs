@@ -27,6 +27,12 @@ class BinaryTree
 		auto findNode(std::shared_ptr<BinaryNode<T>> subTree,
 						const T &target);
 	
+	
+		auto balancedAdd(std::shared_ptr<BinaryNode<T>> subTree,
+							std::shared_ptr<BinaryNode<T>> NewNodePtr);
+							
+		auto getHeightHelper(std::shared_ptr<BinaryNode<T>> subTreePtr);
+		
 	public:
 		BinaryTree();
 		BinaryTree(const T &rootItem);

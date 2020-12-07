@@ -38,6 +38,41 @@ template<class T>
 auto BinaryTree<T>::findNode(std::shared_ptr<BinaryNode<T>> subTree,
 							const T &target){	};
 	
+template<class T>
+auto BinaryTree<T>::balancedAdd(std::shared_ptr<BinaryNode<T>> subTreePtr,
+							std::shared_ptr<BinaryNode<T>> newNodePtr)
+{
+	if(subTreePtr == nullptr)
+		return newNodePtr;
+	else
+	{
+		auto leftPtr = subTreePtr->getLeftChild();
+		auto rightPtr = subTreePtr->getRightChild();
+		
+		if(getHeightHelper(leftPtr) > getHeightHelper(rightPtr))
+		{
+			rightPtr = balancedAdd(rightPtr, newNodePtr);
+			subTreePtr->setRightChild(rightPtr);
+		}
+		else
+		{
+			leftPtr = balancedAdd(leftPtr, newNodePtr);
+			subTreePtr->setLeftChild(leftPtr);
+		}
+		
+		return subTreePtr;
+	}
+};
+
+template<class T>
+auto BinaryTree<T>::getHeightHelper(std::shared_ptr<BinaryNode<T>> subTreePtr)
+{
+	if(subTreePtr == nullptr)
+		return 0;
+	else
+	return 1+std::max(getHeightHelper(subTreePtr->getLeftChild()),
+				getHeightHelper(subTreePtr->getRightChild()));
+};
 
 template<class T>
 BinaryTree<T>::BinaryTree(){
@@ -75,7 +110,7 @@ void BinaryTree<T>::setRootData(const T &newEntry){	};
 template<class T>
 bool BinaryTree<T>::add(const T &newEntry){
 	auto newNodePtr = std::make_shared<BinaryNode<T>>(newEntry);
-	
+	rootPtr = balancedAdd(rootPtr, newNodePtr);
 	return true;
 };
 
