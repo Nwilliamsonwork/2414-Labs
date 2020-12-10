@@ -28,12 +28,14 @@ class BinaryTree
 						const T &target);
 		
 		bool search(std::shared_ptr<BinaryNode<T>> subTree,
-						T &target);
+						T target);
 	
 		//auto balancedAdd(std::shared_ptr<BinaryNode<T>> subTree,
 		//					std::shared_ptr<BinaryNode<T>> NewNodePtr);
 							
 		auto getHeightHelper(std::shared_ptr<BinaryNode<T>> subTreePtr);
+		
+		void inorder(void visit(T&), std::shared_ptr<BinaryNode<T>> treePtr);
 		
 	public:
 		BinaryTree();
@@ -45,7 +47,7 @@ class BinaryTree
 		Inputs: None
 		Outputs: A boolean value. True if the tree is empty. False otherwise.
 		Purpose: Allows client code determine if the tree is empty
-		*/
+		*/	
 		bool isEmpty() const;
 		
 		/*
@@ -124,7 +126,7 @@ class BinaryTree
 		
 		
 		
-		
+		void inorderTraverse(void visit(T&));
 		//traversals if necessary
 };
 

@@ -2,6 +2,7 @@
 #include "EmployeeInfo.h"
 
 #include <memory>
+#include <iostream>
 
 //incomplete
 template<class T>
@@ -41,46 +42,20 @@ auto BinaryTree<T>::findNode(std::shared_ptr<BinaryNode<T>> subTree,
 
 template<class T>
 bool BinaryTree<T>::search(std::shared_ptr<BinaryNode<T>> subTree,
-						 T &target)
+						 T target)
 {
+	//std::cout << "Target: " << target.getID() << std::endl;
+	//std::cout << "subTree: " <<  (subTree->getItem()).getID() << std::endl;
 	if(subTree == nullptr)
 		return false;
 	else if(target == subTree->getItem())
 		return true;
 	else if (target < subTree->getItem())
-		search(subTree->getLeftChild(), target);
+		return search(subTree->getLeftChild(), target);
 	else
-		search(subTree->getRightChild(), target);
+		return search(subTree->getRightChild(), target);
 };
-/*
-//COMPLETE
-// WRONG FUNCTION. THIS IS FOR A NON-SORTED TREE
-template<class T>
-auto BinaryTree<T>::balancedAdd(std::shared_ptr<BinaryNode<T>> subTreePtr,
-							std::shared_ptr<BinaryNode<T>> newNodePtr)
-{
-	if(subTreePtr == nullptr)
-		return newNodePtr;
-	else
-	{
-		auto leftPtr = subTreePtr->getLeftChild();
-		auto rightPtr = subTreePtr->getRightChild();
-		
-		if(getHeightHelper(leftPtr) > getHeightHelper(rightPtr))
-		{
-			rightPtr = balancedAdd(rightPtr, newNodePtr);
-			subTreePtr->setRightChild(rightPtr);
-		}
-		else
-		{
-			leftPtr = balancedAdd(leftPtr, newNodePtr);
-			subTreePtr->setLeftChild(leftPtr);
-		}
-		
-		return subTreePtr;
-	}
-};
-*/
+
 
 //COMPLETE
 template<class T>
@@ -150,6 +125,25 @@ bool BinaryTree<T>::contains( T &anEntry)
 	bool itemFound = search(rootPtr, anEntry);
 	return itemFound;
 };
+
+template<class T>
+void BinaryTree<T>::inorder(void visit(T&),
+			std::shared_ptr<BinaryNode<T>> treePtr)
+{
+	if(treePtr != nullptr)
+	{
+		inorder(visit, treePtr->getLeftChild());
+		T theItem = treePtr->getItem();
+		visit(theItem);
+		inorder(visit, treePtr->getRightChild());
+	}
+}
+
+template<class T>
+void BinaryTree<T>::inorderTraverse(void visit(T&))
+{
+	inorder(visit, rootPtr);
+}
 
 template class BinaryTree<EmployeeInfo>;
 

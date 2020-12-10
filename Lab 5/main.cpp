@@ -10,6 +10,8 @@
 using namespace std;
 //extern template class BinaryTree<EmployeeInfo>;
 
+void displayEmployee(EmployeeInfo&);
+
 int main()
 {
 	BinaryTree<EmployeeInfo> tree();
@@ -32,7 +34,7 @@ int main()
 		string tempStr(input);
 		//cout << tempInt << "	" << tempStr << endl;
 		employee = make_shared<EmployeeInfo>(tempInt, tempStr);
-		cout << employee->getID() << "	" << employee->getName();
+		cout << employee->getID() << "	" << employee->getName() << endl;
 		sortedTree.add(*employee);
 	}
 	
@@ -45,13 +47,24 @@ int main()
 	employee = make_shared<EmployeeInfo>(testID, "");
 	bool found = sortedTree.contains(*employee);
 	
-	cout << found;
+	if(found)
+		cout << "Found" << endl;
+	else
+		cout << "Not found" << endl;
+		
 	//TODO: ask user for an id # and say whether or not it was found in the tree
 	
 	//TODO EC: Display the tree to the user
-	
+	sortedTree.inorderTraverse(displayEmployee); 
 	//TODO EC: Allow user to add an employee
 	
 	//TODO EC: Allow user to remove an employee
 	return 0;
 }
+
+void displayEmployee(EmployeeInfo &emp)
+{
+	cout << "ID #: " << emp.getID() << endl;
+	cout << "Name: " << emp.getName() << endl;
+}
+
