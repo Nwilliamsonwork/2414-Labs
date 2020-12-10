@@ -1,8 +1,6 @@
 #include "BinaryNode.h"
 #include "EmployeeInfo.h"
 
-template<class T>
-BinaryNode<T>::BinaryNode(){	};
 
 template<class T>
 BinaryNode<T>::BinaryNode(const T& newItem){
@@ -11,10 +9,6 @@ BinaryNode<T>::BinaryNode(const T& newItem){
 	rightChild = nullptr;
 };
 
-template<class T>
-BinaryNode<T>::BinaryNode(const T& newItem,
-						std::shared_ptr<BinaryNode<T>> leftChild,
-						std::shared_ptr<BinaryNode<T>> rightChild){	};
 
 template<class T>
 void BinaryNode<T>::setItem(const T& anItem){

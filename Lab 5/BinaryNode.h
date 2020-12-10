@@ -13,12 +13,9 @@ class BinaryNode
 		std::shared_ptr<BinaryNode<T>> rightChild;
 		
 	public:
-		BinaryNode();
+
 		BinaryNode(const T& newItem);
-		BinaryNode(const T& newItem,
-					std::shared_ptr<BinaryNode<T>> leftChild,
-					std::shared_ptr<BinaryNode<T>> rightChild);
-		
+
 		void setItem(const T& anItem);
 		T getItem() const;
 		

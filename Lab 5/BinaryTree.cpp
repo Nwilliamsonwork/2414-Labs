@@ -4,7 +4,7 @@
 #include <memory>
 #include <iostream>
 
-//incomplete
+
 template<class T>
 auto BinaryTree<T>::placeNode(std::shared_ptr<BinaryNode<T>> subTree,
 								std::shared_ptr<BinaryNode<T>> newNode){	
@@ -44,8 +44,6 @@ template<class T>
 bool BinaryTree<T>::search(std::shared_ptr<BinaryNode<T>> subTree,
 						 T target)
 {
-	//std::cout << "Target: " << target.getID() << std::endl;
-	//std::cout << "subTree: " <<  (subTree->getItem()).getID() << std::endl;
 	if(subTree == nullptr)
 		return false;
 	else if(target == subTree->getItem())
@@ -57,7 +55,7 @@ bool BinaryTree<T>::search(std::shared_ptr<BinaryNode<T>> subTree,
 };
 
 
-//COMPLETE
+
 template<class T>
 auto BinaryTree<T>::getHeightHelper(std::shared_ptr<BinaryNode<T>> subTreePtr)
 {
@@ -78,10 +76,6 @@ BinaryTree<T>::BinaryTree(){
 template<class T>
 BinaryTree<T>::BinaryTree(const T &rootItem){	};
 
-/*
-template<class T>
-BinaryTree<T>::BinarySearchTree(const BinarySearchTree<T> &tree){	};
-*/
 
 
 template<class T>

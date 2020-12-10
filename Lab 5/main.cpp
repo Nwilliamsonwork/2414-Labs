@@ -9,20 +9,15 @@
 #include <limits>
 
 using namespace std;
-//extern template class BinaryTree<EmployeeInfo>;
+
 
 void displayEmployee(EmployeeInfo&);
 
 int main()
-{
-	BinaryTree<EmployeeInfo> tree();
-	//TODO: add default employee information to tree
-	
+{	
 	ifstream infile;
 	shared_ptr<EmployeeInfo> employee;
-
 	BinaryTree<EmployeeInfo> sortedTree;
-	
 	char input[256];
 	
 	infile.open("Employees.txt");
@@ -31,15 +26,17 @@ int main()
 	{
 		infile.getline(input, 256);
 		int tempInt = atoi(input);
+		
 		infile.getline(input, 256);
 		string tempStr(input);
-		//cout << tempInt << "	" << tempStr << endl;
+		
 		employee = make_shared<EmployeeInfo>(tempInt, tempStr);
-		cout << employee->getID() << "	" << employee->getName() << endl;
 		sortedTree.add(*employee);
 	}
 	
 	infile.close();
+	
+	
 	
 	int id;
 	int choice;
@@ -48,12 +45,15 @@ int main()
 	
 	do{
 		cout << endl;
+		cout << "Choos an option from one of the below menu items." << endl;
 		cout << "1: Search for an entry using the employee's ID #" << endl;
 		cout << "2: Display the tree in order." << endl;
 		cout << "3: Add an employee to the tree." << endl;
+		//cout << "4: Remove an employee from the tree." << endl;
 		cout << "0: Quit" << endl;
 		cout << "Your choice: ";
 		cin >> choice;
+		
 		cin.clear();
         cin.ignore(numeric_limits<streamsize>::max(), '\n');
 		
@@ -82,16 +82,20 @@ int main()
 				break;
 		
 			case 3: //add an employee
-				//string name;
+
 				cout << "Enter ID # of employee to add: ";
 				cin >> id;
+				
 				cin.clear();
             	cin.ignore(numeric_limits<streamsize>::max(), '\n');
+            	
 				cout << "Enter Name of employee to add: ";
 				cin.getline(input, 256);
 				string name(input);
+				
 				cin.clear();
             	cin.ignore(numeric_limits<streamsize>::max(), '\n');
+            	
 				
 				employee = make_shared<EmployeeInfo>(id, name);
 				
@@ -99,18 +103,22 @@ int main()
 				
 				break;
 		
-		//TODO EC: Allow user to remove an employee
-		
-		/*
-		cout << "Enter ID # of employee to remove: ";
-		cin >> id;
-		
-		employee = make_shared<EmployeeInfo(id, "");
-		
-		sortedTree.remove(*employee);
-		*/
+				//TODO EC: Allow user to remove an employee
+				
+				/*
+			case 4:
+				cout << "Enter ID # of employee to remove: ";
+				cin >> id;
+				
+				employee = make_shared<EmployeeInfo(id, "");
+				
+				sortedTree.remove(*employee);
+				break;
+				*/
 		}//end switch
-	}while(choice == 1,2,3);
+	}while(choice == 1,2,3); //add 4 when remove option is complete
+
+
 	return 0;
 }
 
